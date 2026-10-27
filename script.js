@@ -1,7 +1,7 @@
 const CANTIDAD_HOYOS = 9;
 const DURACION = 15;          // segundos
-const ASOMA_MIN = 450;        // ms que el topo queda visible
-const ASOMA_MAX = 900;
+const ASOMA_MIN = 900;        // ms que el topo queda visible
+const ASOMA_MAX = 1500;
 
 const tablero = document.getElementById('tablero');
 const elPuntos = document.getElementById('puntos');
@@ -68,13 +68,13 @@ function mostrarTopo() {
   hoyo.classList.remove('golpeado');
   hoyo.classList.add('activo');
 
-  // A medida que pasa el tiempo, los topos se vuelven más rápidos
-  const factor = 1 + (tiempo / DURACION) * 0.5;
+  // Los topos se aceleran apenas con el paso del tiempo
+  const factor = 0.8 + (tiempo / DURACION) * 0.2;
   const visible = (ASOMA_MIN + Math.random() * (ASOMA_MAX - ASOMA_MIN)) * factor;
 
   timerTopo = setTimeout(() => {
     hoyo.classList.remove('activo');
-    timerTopo = setTimeout(mostrarTopo, 200 + Math.random() * 300);
+    timerTopo = setTimeout(mostrarTopo, 500 + Math.random() * 400);
   }, visible);
 }
 
@@ -88,7 +88,7 @@ function golpear(hoyo) {
 
   // Pasar enseguida al siguiente topo
   clearTimeout(timerTopo);
-  timerTopo = setTimeout(mostrarTopo, 250);
+  timerTopo = setTimeout(mostrarTopo, 500);
 }
 
 function terminar() {

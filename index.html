@@ -1,27 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Atrapa al topo</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <main class="juego">
-    <h1>Atrapa al topo</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atrapa al topo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="juego">
+      <h1>Atrapa al topo</h1>
 
-    <div class="marcador">
-      <p>Puntos <strong id="puntos">0</strong></p>
-      <p>Tiempo <strong id="tiempo">30</strong></p>
-      <p>Récord <strong id="record">0</strong></p>
-    </div>
+      <div class="marcador">
+        <p>Puntos <strong id="puntos">0</strong></p>
+        <p>Tiempo <strong id="tiempo">15</strong></p>
+        <p>Récord <strong id="record">0</strong></p>
+      </div>
 
-    <div class="tablero" id="tablero" aria-label="Tablero de juego"></div>
+      <div class="tablero" id="tablero" aria-label="Tablero de juego"></div>
 
-    <p class="mensaje" id="mensaje" aria-live="polite">Tocá un topo cuando asome. Tenés 30 segundos.</p>
-    <button id="btn-jugar" type="button">Empezar</button>
-  </main>
+      <p class="mensaje" id="mensaje" aria-live="polite">
+        Tocá un topo cuando asome. Tenés 15 segundos.
+      </p>
+      <button id="btn-jugar" type="button">Empezar</button>
+    </main>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
