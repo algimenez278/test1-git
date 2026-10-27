@@ -1,5 +1,5 @@
 const CANTIDAD_HOYOS = 9;
-const DURACION = 30;          // segundos
+const DURACION = 15;          // segundos
 const ASOMA_MIN = 450;        // ms que el topo queda visible
 const ASOMA_MAX = 900;
 
@@ -69,7 +69,7 @@ function mostrarTopo() {
   hoyo.classList.add('activo');
 
   // A medida que pasa el tiempo, los topos se vuelven más rápidos
-  const factor = 0.5 + (tiempo / DURACION) * 0.5;
+  const factor = 1 + (tiempo / DURACION) * 0.5;
   const visible = (ASOMA_MIN + Math.random() * (ASOMA_MAX - ASOMA_MIN)) * factor;
 
   timerTopo = setTimeout(() => {
